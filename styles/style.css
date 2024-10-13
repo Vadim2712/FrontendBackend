@@ -12,6 +12,7 @@ nav {
     padding-right: 20px;
     border: 1px solid black;
 }
+
 .main_part {
     width: 1150px;
     background: rgb(46, 45, 45);
@@ -27,6 +28,7 @@ nav {
     float: left;
     position: relative;
 }
+
 .top {
     width: 200px;
     background: rgb(46, 45, 45);
@@ -39,12 +41,14 @@ body {
 }
 p, h1, h2, h3 {
     color: rgb(131, 129, 129);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
 }
-
 h4, h5, h6 {
     color: rgb(131, 129, 129);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a {
+    color: #246f1b;
 }
 .sticky {
     position: -webkit-sticky;
@@ -54,15 +58,50 @@ h4, h5, h6 {
 .product {
     width: 250px;
     background: rgb(138, 138, 138);
-    padding: 1px;
+    padding: 20px;
     border: solid 1px black;
     float: left;
     cursor: pointer;
+    text-align: center;
     margin: auto;
     display: block;
+    position: relative;
 }
 .product:hover{
     background-color: #cb5959
+}
+.grid-container {
+    border: solid 2px #000;
+    display: grid;
+    grid-template-columns: 16em 16em;
+}
+
+.grid-item {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1.5em;
+}
+.flex-container {
+    display: flex;
+    border: 1px black solid;
+}
+.flex-item {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 1.5em;
+    color: white;
+}
+.space-around {
+    justify-content: space-around;
+}
+.color1 {
+    background-color: #9d9ba6;
+    color: #111111;
+}
+.color2 {
+    background-color: #42433f;
+    color: #aaa;
 }
 .modal {
     display: none; 

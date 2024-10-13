@@ -55,7 +55,13 @@
                 height="70"/>
             <div class = "top3"><h5>Группа ЭФБО-04-23</h5>
                  <h5>Гульницкий Вадим Игоревич</h5></div>
-       <div class="block_inf"><h4><a href="./main.html">Главная</a> <a href="./1semestr.html">Первый семестр</a> Второй семестр <a href="./uslugi.html">Услуги</a> Авторизация</h4></div>
+       <div class="flex-container space-around">
+        <div class="flex-item color1"><a href="./main.html">Главная</a></div>
+        <div class="flex-item color2"><a href="./1semestr.html">Первый семестр</a></div> 
+        <div class="flex-item color1">Второй семестр</div>
+        <div class="flex-item color2"><a href="./uslugi.html">Услуги</a></div>
+        <div class="flex-item color1">Авторизация</div>
+        </div>
        </header>
                 <div class = "block_inf"><nav class="sticky">
                         <h5>Навигация по странице<br>
@@ -88,9 +94,29 @@
                             width="200" 
                             height="200"/>
                            Интернет-магазин<br>
-                           <button id="openform3" class="joinBtn">Заказать</button></div></h3><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                           <button id="openform3" class="joinBtn">Заказать</button></div></h3><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                            <p>Веб-разработчик сидел за компьютером и пытался исправить ошибку в коде. Он уже несколько часов бился над этой проблемой, но никак не мог найти решение. finally, он в отчаянии крикнул: "Почему ты не работаешь, черт возьми?!" И тогда его кошка, которая сидела рядом на столе, посмотрела на него и сказала: " peut-être parce que tu es un mauvais programmeur". Веб-разработчик уставился на кошку в шоке и подумал: "Может быть, мне стоит послушать этого кота и начать учиться лучше программировать".</p>
-                    
+                           
+                           <div class="grid-container">
+                            <div class="grid-item color1">Услуга 1 <br><br>
+                                <img src="./images/scissors.webp" id="parik" alt="parikmaherskaya" width="50" height="50"/><br>Парикмахерская<br>
+                                <button class="joinBtn" data-service="Услуга 1">Обратная связь</button></div>
+                            <div class="grid-item color2">Услуга 2 <br><br>
+                                <img src="./images/massage.webp" id="massage" alt="massage" width="50" height="50"/><br>Массажный салон<br>
+                                <button class="joinBtn" data-service="Услуга 2">Обратная связь</button></div>
+                            <div class="grid-item color2">Услуга 3 <br><br>
+                                <img src="./images/cinema.webp" id="cinema" alt="cinema" width="50" height="50"/><br>Кинотеатр<br>
+                                <button class="joinBtn" data-service="Услуга 3">Обратная связь</button></div>
+                            <div class="grid-item color1">Услуга 4 <br><br>
+                                <img src="./images/atelier.webp" id="atelier" alt="atelier" width="50" height="50"/><br>Ателье<br>
+                                <button class="joinBtn" data-service="Услуга 4">Обратная связь</button></div>
+                            <div class="grid-item color1">Услуга 5 <br><br>
+                                <img src="./images/masterhour.webp" id="masterhour" alt="masterhour" width="50" height="50"/><br>Мастер на час<br>
+                                <button class="joinBtn" data-service="Услуга 5">Обратная связь</button></div>
+                            <div class="grid-item color2">Услуга 6 <br><br>
+                                <img src="./images/masterkey.webp" id="masterkey" alt="masterkey" width="50" height="50"/><br>Ремонт ключей<br>
+                                <button class="joinBtn" data-service="Услуга 3">Обратная связь</button></div>
+                        </div>
                             
                         <script>                
                             var modal = document.getElementById("modal");       
