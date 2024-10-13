@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Ketopark';
+
+    src: local("Ketopark") 
+        url(./font/Ketopark.ttf) format('ttf');
+}
 nav {
     background: rgb(197, 197, 197);
     padding: 10px;
@@ -6,14 +12,14 @@ nav {
     padding-right: 20px;
     border: 1px solid black;
 }
-.block1 {
+.main_part {
     width: 1150px;
     background: rgb(46, 45, 45);
     padding: 10px;
     float: right;
     position: relative;
 }
-.block2 {
+.block_inf {
     width: 1420px;
     background: rgb(46, 45, 45);
     padding: 10px;
@@ -21,7 +27,7 @@ nav {
     float: left;
     position: relative;
 }
-.block3 {
+.top {
     width: 200px;
     background: rgb(46, 45, 45);
     padding: 1px;
@@ -31,20 +37,32 @@ nav {
 body {
     background: rgb(46, 45, 45);
 }
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3 {
     color: rgb(131, 129, 129);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h4, h5, h6 {
+    color: rgb(131, 129, 129);
+    font-family: 'Courier New', Courier, monospace;
 }
 .sticky {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
 }
-.block4 {
+.product {
     width: 250px;
     background: rgb(138, 138, 138);
     padding: 1px;
     border: solid 1px black;
     float: left;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+}
+.product:hover{
+    background-color: #cb5959
 }
 .modal {
     display: none; 
