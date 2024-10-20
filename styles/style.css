@@ -4,6 +4,94 @@
     src: local("Ketopark") 
         url(./font/Ketopark.ttf) format('ttf');
 }
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1025px) {
+    body {
+        font-size: 18px;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input, button {
+    width: 100%; 
+    padding: 10px;
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    input, button {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 601px) {
+    input, button {
+        font-size: 16px;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+iframe, object, embed {
+    max-width: 100%;
+    height: auto;
+}
+
+.pdf-container {
+    overflow: auto;
+    max-width: 100%;
+}
+
+
+
 nav {
     background: rgb(197, 197, 197);
     padding: 10px;
@@ -85,6 +173,10 @@ a {
 .flex-container {
     display: flex;
     border: 1px black solid;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 .flex-item {
     text-align: center;
