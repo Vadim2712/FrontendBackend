@@ -1,0 +1,170 @@
+/*Цветовая палитра*/
+:root {
+  --bg-color: #382844;
+  --acsent-text-color: #ad966e; 
+  --text-color: #6faab6;
+  --nav-color: #c74052;
+
+}
+/*Шрифт для заголовков*/
+@font-face {
+  font-family: 'font-header';
+  src: url('Fonts/larisa_script.ttf') format('truetype');
+}
+/*Шрифт для текста*/
+@font-face {
+  font-family: 'font-text';
+  src: url('Fonts/mon_amour_one_medium.ttf') format('truetype');
+}
+/*Шрифт для ссылок*/
+@font-face {
+  font-family: 'font-link';
+  src: url('Fonts/nautiluspompilius.ttf') format('truetype');
+}
+html body{
+  background-color: var(--bg-color);
+  top: 0%;
+}
+.linky {
+  flex-direction: column;
+  position: fixed;
+  top: 154px;
+  width: 200px;
+  height: 100%;
+  text-decoration: none;  
+  padding: 10px;
+  margin-right: 200px;
+  border-right: 5px solid #d8ccb0; 
+  z-index: 10; 
+}
+.navbar {
+  background-color: #d4b164 !important;
+}
+h1, h2, h3, th {
+  font-family: 'font-header', sans-serif;
+  font-weight: 700 ;
+  font-size: xx-large !important;
+  margin-bottom: 30px; /* Устанавливает отступ между абзацами */
+  color: var(--acsent-text-color) !important;
+}
+h4{
+  font-family: 'font-header', sans-serif;
+  font-weight: 700 ;
+  font-size: xx-large !important;
+}
+nav a, a{
+  font-family: 'font-link', sans-serif;
+  font-weight: 700;
+  font-size: x-large !important;
+  color: var(--nav-color) !important;
+}
+nav a:hover, a:hover{
+  color: var(--text-color) !important;
+  transition: text-shadow 0.3s ease-in-out, color 0.3s ease;
+}
+p, tr{
+  font-family: 'font-text', sans-serif;
+  font-weight: 400;
+  font-size: x-large;
+  color: var(--text-color);
+}
+th, td, thead, tbody{
+  border: solid 2px var(--acsent-text-color) !important;
+}
+textarea, input[type="text"], input[type="date"], input[type="email"], select{
+  background-color:#000000;
+  border: solid 2px var(--acsent-text-color);
+  color: var(--text-color);
+}
+textarea::placeholder, input[type="text"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder{
+  color: var(--nav-color);
+}
+.container-fluid {
+  background-color: var(--bg-color);
+  position: absolute;
+  position: sticky;
+  z-index:1;
+  top: 0 ;
+}
+.container-fluid-main {
+  background-color: var(--bg-color);
+  padding-left: 230px;
+  position: absolute;
+  position: sticky;
+  z-index:1;
+  top: 0 ;
+}
+.order-window{
+  color: var(--text-color);
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  border-radius:0% 0% 10% 10%;
+  height: 100%;
+}
+.order-window:hover{
+  background-color: #d4b164;
+  color: var(--nav-color);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.grid-order-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки одинаковой ширины */
+  gap: 40px; /* Промежуток между элементами */
+}
+.grid-table-container {
+  color: var(--nav-color);
+  display: grid;
+  grid-template-columns: 300px 300px;
+}
+.grid-item {
+  font-family: 'font-header', sans-serif;
+  border: 2px solid var(--acsent-text-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 20px;
+}
+.color1 {
+  background-color: #825aa5;
+}
+.color2 {
+  background-color: #47345a;
+}
+.button {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  letter-spacing: 4px;
+  padding: 13px 30px;
+  overflow: hidden;
+  transition: 0.2s;
+}
+.btn-form {
+  background-color: #d4b164;
+  border: 2px solid var(--acsent-text-color);
+  border-radius:15% 15% 15% 15%;
+  font-family: "font-text";
+  color: var(--nav-color);
+}
+.btn-form:hover{
+  background-color: #382844;
+  color: var(--text-color);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;  
+}
+.scrollToTop {
+  position: fixed;
+  bottom: 20px; /* Отступ от низа */
+  right: 20px; /* Отступ от правого края */
+  display: none; /* Скрываем кнопку изначально */
+  background-color: #007BFF; /* Цвет фона кнопки */
+  color: white; /* Цвет текста кнопки */
+  border: none; /* Убираем рамку */
+  border-radius: 5px; /* Скругление углов */
+  padding: 10px 15px; /* Отступы внутри кнопки */
+  cursor: pointer; /* Курсор при наведении */
+  font-size: 16px; /* Размер шрифта */
+  z-index: 1000; /* Уровень наложения */
+}
+
+.scrollToTop:hover {
+  background-color: #0056b3; /* Цвет фона при наведении */
+}
