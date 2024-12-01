@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.ico">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.onscroll = function () {
+                const button = document.getElementById("scrollToTop");
+                // Показ кнопки "Наверх", если прокрутка больше 20px
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            };
+
+            document.getElementById("scrollToTop").onclick = function () {
+                // Прокрутка страницы вверх при нажатии на кнопку
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            // Убираем панель
+            let lastScrollTop = 0;
+    window.addEventListener("scroll", function () {
+        if (window.innerWidth <= 600){
+        let header = document.querySelector(".Header");
+        let nav = document.querySelector("nav");
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            header.style.top = "-10000px";
+            nav.style.top = "-70px";
+        } else {
+            header.style.top = "0";
+            nav.style.top = "100px";
+        }
+        lastScrollTop = currentScroll;
+        }
+    });
+        });
+        
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert("Форма успешно отправлена!"); // Сообщение при отправке формы
+            document.getElementById('Form_contact').reset(); 
+            document.getElementById('Form_contact2').reset();
+            document.getElementById('Form_contact3').reset();
+        }
+
+        // Функция обновления кода страны в поле номера телефона
+        function updatePhoneCode() {
+            const countrySelect = document.getElementById('country');
+            const phoneInput = document.getElementById('phone');
+            const countryCode = countrySelect.value;
+
+            
+            if (!phoneInput.value.startsWith(countryCode)) {
+                phoneInput.value = countryCode + phoneInput.value.replace(/^\+?\d*/g, ''); 
+            }
+
+           
+            phoneInput.addEventListener('input', function () {
+                if (!phoneInput.value.startsWith(countryCode)) {
+                    phoneInput.value = countryCode + phoneInput.value.replace(/^\+?\d*/g, ''); 
+                }
+            });
+        }
+
+        // Функция для проверки состояния чекбокса
+        function check() {
+            var submit = document.getElementsByName('submit')[0];  // Кнопка отправки
+            var consentCheckbox = document.getElementById('popd'); // Чекбокс согласия
+            if (consentCheckbox.checked) {
+                submit.disabled = false;  
+            } else {
+                submit.disabled = true;  
+            }
+        }
+    </script>
+    <div class="Header">
+        <div> 
+        <img src="Pictures/icon.jpg" alt="Logo" width="70px" height="60" style="border-radius: 100%;">
+        </div>
+        <div>
+            <p>Группа: Эфбо-04-23</p>
+            <p style="padding-right: 20px;">Гульницкий Вадим Игоревич</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav">Главная</a>
+        <a href="Per_Sem.html" class="nav">Первый семестр</a>
+        <a href="Vtor_Sem.html" class="nav">Второй семестр</a>
+        <a href="Uslugi.html" class="nav">Услуги</a>
+        <a href="Avtor.html" class="nav">Авторизация</a>
+    </nav>
+
+
+<body>
+    <main style="margin-top: 100px;">
+    <div class="ykor">
+        <div><h3>Навигация по сайту</h3><br>
+            <a href="#Services">Услуги</a><br>
+            <a href="#Accordion">Аккордеон</a><br>
+            <a href="#Slaider">Слайдер</a>
+        </div>
+    </div>
+    <div id="Services" class="main">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Pictures/vizitka.jpg" class="card-img-bottom" alt="Сайт-визитка">
+                        <div class="card-body">
+                            <h5 class="card-title">Сайт-визитка</h5>
+                            <button class="btn-form" onclick="window.dialog.showModal()">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Pictures/korporat.png" class="card-img-top" alt="Кооперативный сайт">
+                        <div class="card-body">
+                            <h5 class="card-title">Корпоративный сайт</h5>
+                            <button class="btn-form" onclick="window.dialog2.showModal()">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="Pictures/online-shop.webp" class="card-img-top" alt="Интернет-магазин">
+                        <div class="card-body">
+                            <h5 class="card-title">Интернет-магазин</h5>
+                            <button class="btn-form" onclick="window.dialog3.showModal()">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="Accordion" class="container mt-5">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                            aria-expanded="true" aria-controls="collapseOne">
+                            <p>Посмотреть</p>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="background-color: #d8ccb0;">
+                        <div class="accordion-body">
+                            <img src="Pictures/atelier.webp" height="10%" width="10%">
+                        </div>
+                        <div class="accordion-body">
+                            <img src="Pictures/cinema.webp" height="10%" width="10%">
+                        </div><div class="accordion-body">
+                            <img src="Pictures/massage.webp" height="10%" width="10%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><br><br>
+
+        <div id="Slaider" class="container mt-5">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-window">
+                            <img src="Pictures/masterhour.webp" class="d-block w-100" alt="1">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-window">
+                            <img src="Pictures/masterkey.webp" class="d-block w-100" alt="2">
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-window">
+                            <img src="Pictures/scissors.webp" class="d-block w-100" alt="3">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Назад</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Вперёд</span>
+                </button>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+    <button id="scrollToTop" class="button">↑</button>
+</main>
+    <footer style="display: flex; align-items: center; justify-content:space-around; border-top: 5px solid #d8ccb0; background-color: #382844">
+        <p style="text-align: right;">&copy;Гульницкий Вадим Игоревич</p>
+        <a href="https://vk.com"><img src="Pictures/vk.png" alt="VK icon" style="width: 30px;"></a>
+    </footer>
+
+    <dialog id="dialog">
+        <button type="button" class="btn-form" style="float: right;margin-top: 0%;" onclick="window.dialog.close()">×</button>
+        <form id="Form_contact" onsubmit="handleSubmit(event)">
+            <h2>Сайт-визитка</h2>
+            <div class="dialog">
+                <label for="name" class="form-label">Имя:</label>
+                <input class="form-control" type="text" id="name" name="name" required placeholder="Введите свое имя">
+                <label for="surname" class="form-label">Фамилия:</label>
+                <input class="form-control" type="text" id="surname" name="surname" required placeholder="Введите свою фамилию">
+                <label for="email" class="form-label">Электронная почта:</label>
+                <input class="form-control" type="email" id="email" name="email" required placeholder="example@mail.com">
+                <label for="country" class="form-label">Выберите страну:</label>
+                <select id="country" class="form-select" name="country" onchange="updatePhoneCode()" required>
+                    <option value="">-- Выберите страну --</option>
+                    <option value="+1">США (+1)</option>
+                    <option value="+44">Великобритания (+44)</option>
+                    <option value="+7">Россия (+7)</option>
+                    <option value="+49">Германия (+49)</option>
+                    <option value="+33">Франция (+33)</option>
+                </select>
+                <label for="phone" class="form-label">Номер телефона:</label>
+                <input class="form-control" type="tel" id="phone" name="phone" required placeholder="Введите номер телефона">
+                <label for="date" class="form-label">Выберите дату:</label>
+                <input class="form-control" type="date" id="date" name="date" required>
+                <label for="comments" class="form-label">Комментарии:</label>
+                <textarea class="form-control" id="comments" name="comments" placeholder="Напишите комментарий"></textarea>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="popd" onclick="check();" value="">
+                    <label class="form-check-label" for="popd">Даю согласие на обработку персональных данных</label>
+                </div>
+                <button type="submit" name="submit" class="btn-form" disabled>Отправить</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>

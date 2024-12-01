@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.ico">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Отображение кнопки при прокрутке
+    window.onscroll = function() {
+        const button = document.getElementById("scrollToTop");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = "block"; // Показываем кнопку
+        } else {
+            button.style.display = "none"; // Скрываем кнопку
+        }
+    };
+    // Прокрутка вверх при клике на кнопку
+    document.getElementById("scrollToTop").onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'}); // Плавная прокрутка вверх
+    };
+});
+</script>
+
+<div class="Header">
+    <div> 
+    <img src="Pictures/icon.jpg" alt="Logo" width="70px" height="60" style="border-radius: 100%;">
+    </div>
+    <div>
+        <p>Группа: Эфбо-04-23</p>
+        <p style="padding-right: 20px;">Гульницкий Вадим Игоревич</p>
+    </div>
+</div>
+
+<nav>
+    <a href="index.html" class="nav">Главная</a>
+    <a href="Per_Sem.html" class="nav">Первый семестр</a>
+    <a href="Vtor_Sem.html" class="nav">Второй семестр</a>
+    <a href="Uslugi.html" class="nav">Услуги</a>
+    <a href="Avtor.html" class="nav">Авторизация</a>
+</nav>
+<body>
+<main style="margin-top: 180px;">
+<div class="ykor">
+    <div><h3>Навигация по сайту</h3><br>
+        <a href="#Front">Фронтенд</a><br>
+        <a href="#Bek">Бэкенд</a>
+    </div>
+</div>
+    <div class="main"> 
+        <div>
+            <h3><b>Добро пожаловать на мой сайт!</b></h3>
+        </div>
+        
+        <img style="float: right; margin-right: 5%;border-radius: 10%;" src="Pictures/photo_me.jpg" alt="Фотка" width="35%" height="35%">
+        <br><br><br><br><p>Меня зовут Вадим и я начинающий фулстек фронтенд-разработчик.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <h4 id="Front"> Фронтенд </h4>
+        <p> <b>Фронтенд</b> — передняя часть веб-приложения, отвечающая за интерфейс пользователя. Включает HTML, CSS и JavaScript для создания и оформления веб-страниц и их интерактивности. Задачи фронтенд-разработчика включают создание макетов, добавление интерактивности, оптимизацию производительности и тестирование кода. Фронтенд определяет пользовательский опыт и впечатления от веб-приложения.</p>
+        <section>    
+        <video src="Videos/frontend.mp4" width="70%" height="70%"></video>
+        </section>
+    
+        <h4 id="Bek"> Бэкенд</h4>
+        <p><b>Бэкенд</b> — задняя часть веб-приложения, обрабатывающая данные и бизнес-логику. Включает серверный код на языках программирования, базы данных и API. Задачи бэкенд-разработчика включают создание серверных скриптов, управление базами данных, обеспечение безопасности данных и оптимизацию производительности. Бэкенд-разработчики работают вместе с фронтенд-разработчиками для создания полнофункциональных веб-приложений.</p>
+            <section>
+            <video src="Videos/backend.mp4" width="70%" height="70%"></video>
+            </section>
+
+        <br><br><br><br>
+
+    </div>
+    <button id="scrollToTop" class="button">↑</button>
+
+</main>
+
+<footer style="display: flex; align-items: center; justify-content:space-around; border-top: 5px solid #d8ccb0;">
+    <p style="text-align: right;">&copy;Гульницкий Вадим Игоревич</p>
+    <a href="https://vk.com"><img src="Pictures/vk.png" alt="VK icon" style="width: 30px;"></a>
+</footer>
+
+</body>
+</html>

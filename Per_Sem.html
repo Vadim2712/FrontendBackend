@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Первый семестр</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.ico">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Отображение кнопки при прокрутке
+    window.onscroll = function() {
+        const button = document.getElementById("scrollToTop");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = "block"; // Показываем кнопку
+        } else {
+            button.style.display = "none"; // Скрываем кнопку
+        }
+    };
+
+    // Прокрутка вверх при клике на кнопку
+    document.getElementById("scrollToTop").onclick = function() {
+        window.scrollTo({top: 0, behavior: 'smooth'}); // Плавная прокрутка вверх
+    };
+});
+        function openPDF(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                document.getElementById('pdfViewer').src = fileURL;
+            }
+        }
+
+        function resizeIframe() {
+            const iframe = document.getElementById('pdfViewer');
+            const windowHeight = window.innerHeight;
+            const labelHeight = document.querySelector('label').offsetHeight;
+            const inputHeight = document.querySelector('input').offsetHeight;
+
+            iframe.height = windowHeight - (labelHeight + inputHeight + 20);
+        }
+
+        window.onload = resizeIframe;
+        window.onresize = resizeIframe;
+    </script>
+</head>
+<body>
+    <div class="Header">
+        <div> 
+        <img src="Pictures/icon.jpg" alt="Logo" width="70px" height="60" style="border-radius: 100%;">
+        </div>
+        <div>
+            <p>Группа: Эфбо-04-23</p>
+            <p style="padding-right: 20px;">Гульницкий Вадим Игоревич</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="nav">Главная</a>
+        <a href="Per_Sem.html" class="nav">Первый семестр</a>
+        <a href="Vtor_Sem.html" class="nav">Второй семестр</a>
+        <a href="Uslugi.html" class="nav">Услуги</a>
+        <a href="Avtor.html" class="nav">Авторизация</a>
+    </nav>
+
+    <div class="ykor">
+        <div class="ykor_bor"><h3>Навигация по сайту</h3><br>
+            <a href="#Leksi">Лекции</a><br>
+            <a href="#Prak">Практики</a><br>
+            <a href="#Karta">Адресс ВУЗа</a><br>
+            <a href="#Pdf">ПДФка</a><br>
+        </div>
+    </div>
+
+    <main style="padding: 200px;">
+        <div class="container">
+            <h3>Первый семестр</h3>
+            <h1 id="Leksi">Лекции</h1>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Номер</th>
+                            <th scope="col">Тема</th>
+                            <th scope="col">Посещение</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Технологии индустриального программирования</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Создание программного обеспечения</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Социальная психология и педагогика</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Система искусственного интеллекта и большие данные</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Дискретная математика</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Математический анализ</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Фронтенд и бэкенд разработка</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Программирование корпоративных систем</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Русский язык и культура речи</td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <h1 id="Prak">Практики</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Номер</th>
+                        <th scope="col">Тема</th>
+                        <th scope="col">Посещение</th>
+                        <th scope="col">Выполнение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Фронтенд и бэкенд разработка</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Физическая культура и спорт (элективная дисциплина)</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Руссский язык и культура речи</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Дискретная математика</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Технологии индустриального программирования</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>Математический анализ</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>Иностранный язык</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>Программирование корпоративных систем</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>Создание программного обеспечения</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>Система искуственного интелекта и большие данные</td>
+                        <td><input type="checkbox"></td>
+                        <td><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table><br><br>
+            <h3>Карта ВУЗа</h3>
+            <div>
+                <iframe id="Karta" frameborder="1" style="width: 60%; height: 500px;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A49d7ddc7bb1c342f68645779e304a2aa5ed47b4d1cc471e65f54201454809b28&amp;source=constructor"></iframe>
+            </div><br><br>
+            <h3 id="Pdf">Документ</h3>
+            <div>
+                <object id="Doc" data="Doc.pdf" type="application/pdf" style="width: 60%; height: 1000px"></object>
+            </div>
+        </div>
+        <button id="scrollToTop" class="button">↑</button>
+    </main>
+
+    <footer style="display: flex; align-items: center; justify-content:space-around; border-top: 5px solid #d8ccb0;">
+        <p style="text-align: right;">&copy;Гульницкий Вадим Игоревич</p>
+        <a href="https://vk.com"><img src="Pictures/vk.png" alt="VK icon" style="width: 30px;"></a>
+    </footer>
+</body>
+</html>
