@@ -29,26 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({top: 0, behavior: 'smooth'}); // Плавная прокрутка вверх
     };
 });
-        function openPDF(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const fileURL = URL.createObjectURL(file);
-                document.getElementById('pdfViewer').src = fileURL;
-            }
-        }
+</script>
+<script src="script.js" defer></script>
 
-        function resizeIframe() {
-            const iframe = document.getElementById('pdfViewer');
-            const windowHeight = window.innerHeight;
-            const labelHeight = document.querySelector('label').offsetHeight;
-            const inputHeight = document.querySelector('input').offsetHeight;
-
-            iframe.height = windowHeight - (labelHeight + inputHeight + 20);
-        }
-
-        window.onload = resizeIframe;
-        window.onresize = resizeIframe;
-    </script>
 </head>
 <body>
     <div class="Header">
@@ -80,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <main style="padding: 200px;">
         <div class="container">
-            <h3>Первый семестр</h3>
+            <h1>Первый семестр</h1>
             <h1 id="Leksi">Лекции</h1>
             <div class="table">
                 <table>
@@ -222,6 +205,23 @@ document.addEventListener("DOMContentLoaded", function() {
             <div>
                 <object id="Doc" data="Doc.pdf" type="application/pdf" style="width: 60%; height: 1000px"></object>
             </div>
+            <div class="content" style="display: none;">
+                <img src="Pictures/icon.jpg" alt="Sample">
+                <div class="text-container">
+                    <h2>Этот элемент должен быть показан</h2>
+                    <p>Любители «яблочных» гаджетов в шоке: продукты техногиганта содержат химические вещества, способные вызывать онкологические заболевания. Об этом заявила сама компания.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+            <div class="content">
+                <img src="Pictures/vk.png" alt="Image">
+                <div class="text-container">
+                    <h2>Этот элемент должен быть скрыт</h2>
+                    <p>Вы можете настроить видимость статуса (режим «невидимки») в отдельном приложении VK Мессенджер для Android и iOS. Настройки, установленные в нём, будут действовать на всех платформах.</p>
+                    <a href="#" class="button">Learn More</a>
+                </div>
+            </div>
+            
         </div>
         <button id="scrollToTop" class="button">↑</button>
     </main>
@@ -230,5 +230,6 @@ document.addEventListener("DOMContentLoaded", function() {
         <p style="text-align: right;">&copy;Гульницкий Вадим Игоревич</p>
         <a href="https://vk.com"><img src="Pictures/vk.png" alt="VK icon" style="width: 30px;"></a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

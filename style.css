@@ -38,13 +38,13 @@ nav {
 }
 h1, h2, h3, h4, th {
     font-family: 'font-header', sans-serif;
-    color: var(--acsent-text-color) !important;
-    font-size: xx-large !important;
+    color: var(--acsent-text-color);
+    font-size: xx-large ;
 }
 p, h5, tr, label {
     font-family: 'font-text', sans-serif;
     color: var(--text-color);
-    font-size: large !important;
+    font-size: large;
 }
 th, td, thead, tbody{
     border: solid 2px var(--acsent-text-color) !important;
@@ -173,6 +173,48 @@ textarea {
 
 .img:hover {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content img {
+    width: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.content:hover img {
+    transform: scale(1.1);
+}
+
+.text-container {
+    padding: 20px;
+    width: 50%;
+}
+
+.text-container h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.text-container p {
+    color: #666;
+    line-height: 1.6;
 }
 
 .button {
