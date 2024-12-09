@@ -29,9 +29,243 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo({top: 0, behavior: 'smooth'}); // Плавная прокрутка вверх
     };
 });
+document.addEventListener("DOMContentLoaded", function() {
+    const header = document.querySelector('h1');
+    header.addEventListener('click', () => {
+        alert("Вы кликнули на заголовок - так держать!");
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const lecturesButton = document.querySelector(".btn-lectures");
+    const lecturesTable = document.querySelector("#Leksi").nextElementSibling;
+
+    // Добавляем класс "visible" для плавного показа
+    lecturesButton.addEventListener("click", function () {
+        lecturesTable.classList.toggle("visible");
+    });
+
+    // Функция для показа таблицы с практиками 2-го семестра
+    document.querySelector(".btn-form").addEventListener("click", function () {
+        const practicesTable = document.querySelector("#Prak").nextElementSibling;
+        practicesTable.innerHTML =`
+                    <thead>
+        <tr>
+            <th scope="col">Номер</th>
+            <th scope="col">Тема</th>
+            <th scope="col">Посещение</th>
+            <th scope="col">Выполнение</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Базовое бэкенд-приложение</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>HTTP-запросы</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>JSON и работа с ним</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>HTTP-ответы</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">5</th>
+            <td>Проектирование API</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">6</th>
+            <td>Роутинг и его настройка</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">7</th>
+            <td>NoSQL базы данных</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">8</th>
+            <td>Обеспечение авторизации и доступа пользователей</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">9</th>
+            <td>Работа сторонних сервисов уведомления и авторизации</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">10</th>
+            <td>Основы ReactJS</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">11</th>
+            <td>Работа с компонентами динамической DOM</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">12</th>
+            <td>Использование хуков в React</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">13</th>
+            <td>Основы микросервисной архитектуры</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th scope="row">14</th>
+            <td>Разработка классических модулей веб-приложений</td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>
+    </tbody>
+                `;
+            });
+            const photo = document.querySelector('img[alt="Фотка"]');
+            photo.addEventListener("mouseover", function () {
+                this.style.transform = "scale(1.1)";
+                this.style.transition = "transform 0.3s ease";
+            });
+
+            photo.addEventListener("mouseout", function () {
+                this.style.transform = "scale(1)";
+            });
+
+            photo.addEventListener("click", function () {
+                this.src = "Pictures/photo_best.jpg";
+            });
+
+            photo.addEventListener("dblclick", function () {
+                alert("Не налегай, у меня не так много любимых преподавателей");
+            });
+            const img = document.getElementById('photo');
+        let rotation = 0;
+
+        photo.addEventListener('click', () => {
+            rotation += 90; 
+            photo.style.transform = `rotate(${rotation}deg)`;
+        });
+    });
+document.addEventListener("DOMContentLoaded", function() {
+    const paragraph = document.querySelector('paragraph');
+    paragraph.addEventListener('click', () => {
+        alert("Вы кликнули на заголовок - так держать!");
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const paragraph = document.getElementById("paragraph");
+
+    paragraph.addEventListener("click", function () {
+        
+        const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 80%)`;
+        paragraph.style.backgroundColor = randomColor;
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("messageForm");
+    const formMessage = document.getElementById("formMessage");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        
+        formMessage.classList.remove("hidden");
+        formMessage.classList.add("visible");
+
+        
+        setTimeout(() => {
+            formMessage.classList.remove("visible");
+        }, 3000);
+
+        
+        form.reset();
+    });
+});
+
+
 </script>
 <script src="script.js" defer></script>
+<style>
+h1 {
+    transition: transform 0.3s ease;
+}
 
+h1:hover {
+    transform: scale(1.1);
+}
+.table {
+    max-height: 0; 
+    overflow: hidden; 
+    opacity: 0; 
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+.table.visible {
+    opacity: 1; 
+    max-height: 1000px; 
+}
+img[alt="spin"] {
+    transition: transform 1s ease;
+}
+
+img[alt="spin"]:hover {
+    transform: rotate(7200deg); 
+}
+#paragraph {
+    padding: 10px;
+    text-align: center;
+    background-color: #382844; 
+    transition: background-color 0.5s ease; 
+    border: 1px solid #d8ccb0;
+    cursor: pointer;
+    height: 30px;
+    width: 300px;
+}
+.form-container {
+    margin: 20px 0;
+}
+
+#formMessage {
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0; 
+    transition: opacity 0.5s ease, color 1s ease; 
+}
+
+#formMessage.visible {
+    opacity: 1; 
+    color: green; 
+}
+
+.hidden {
+    display: none;
+}
+
+
+</style>
 </head>
 <body>
     <div class="Header">
@@ -64,6 +298,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <main style="padding: 200px;">
         <div class="container">
             <h1>Первый семестр</h1>
+            <p id="paragraph">Смена цвета фона</p>
             <h1 id="Leksi">Лекции</h1>
             <div class="table">
                 <table>
@@ -122,7 +357,8 @@ document.addEventListener("DOMContentLoaded", function() {
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div><br>
+            <button class="btn-lectures">Показать лекции</button>
             <br>
             <h1 id="Prak">Практики</h1>
             <table>
@@ -196,7 +432,22 @@ document.addEventListener("DOMContentLoaded", function() {
                         <td><input type="checkbox"></td>
                     </tr>
                 </tbody>
-            </table><br><br>
+            </table><br>
+            <button class="btn-form">Практики 2 семестра</button><br><br>
+            <img src="Pictures/photo_me.jpg" alt="Фотка"  width="35%" height="35%"><br>
+            <img src="Pictures/spin.png" alt="spin" id="photo" width="10%" height="10%">
+            <div class="form-container">
+                <form id="messageForm">
+                    <label for="nickname">Ник:</label>
+                    <input type="text" id="nickname" name="nickname" required><br><br>
+                    
+                    <label for="message">Сообщение:</label><br>
+                    <textarea id="message" name="message" rows="4" style="height: 50px; width: 150px;" required></textarea>
+                    
+                    <button type="submit" class="btn-form">Отправить</button>
+                </form>
+                <p id="formMessage" class="hidden">Форма отправлена!</p>
+            </div>
             <h3>Карта ВУЗа</h3>
             <div>
                 <iframe id="Karta" frameborder="1" style="width: 60%; height: 500px;" src="https://yandex.ru/map-widget/v1/?um=constructor%3A49d7ddc7bb1c342f68645779e304a2aa5ed47b4d1cc471e65f54201454809b28&amp;source=constructor"></iframe>
