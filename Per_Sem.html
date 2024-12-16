@@ -205,6 +205,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const addLectureForm = document.getElementById("addLectureForm");
+    const lecturesTable = document.querySelector("#Leksi + .table table tbody");
+
+    addLectureForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Отменяем стандартное поведение формы
+
+        // Получаем значения из полей формы
+        const lectureNumber = document.getElementById("lectureNumber").value;
+        const lectureTopic = document.getElementById("lectureTopic").value;
+
+        // Добавляем новую строку в таблицу
+        const newRow = document.createElement("tr");
+        newRow.innerHTML = `
+            <th scope="row">${lectureNumber}</th>
+            <td>${lectureTopic}</td>
+            <td><input type="checkbox"></td>
+        `;
+        lecturesTable.appendChild(newRow);
+
+        // Очищаем форму после добавления
+        addLectureForm.reset();
+    });
+});
+
 
 </script>
 <script src="script.js" defer></script>
@@ -359,6 +384,18 @@ img[alt="spin"]:hover {
                 </table>
             </div><br>
             <button class="btn-lectures">Показать лекции</button>
+            <div class="add-lecture-form">
+                <h3>Добавить новую лекцию</h3>
+                <form id="addLectureForm">
+                    <label for="lectureNumber">Номер:</label>
+                    <input type="number" id="lectureNumber" name="lectureNumber" required>
+            
+                    <label for="lectureTopic">Тема:</label>
+                    <input type="text" id="lectureTopic" name="lectureTopic" required>
+            
+                    <button type="submit" class="btn-form">Добавить лекцию</button>
+                </form>
+            </div>            
             <br>
             <h1 id="Prak">Практики</h1>
             <table>
@@ -435,7 +472,7 @@ img[alt="spin"]:hover {
             </table><br>
             <button class="btn-form">Практики 2 семестра</button><br><br>
             <img src="Pictures/photo_me.jpg" alt="Фотка"  width="35%" height="35%"><br>
-            <img src="Pictures/spin.png" alt="spin" id="photo" width="10%" height="10%">
+            <img src="Pictures/spin.png" alt="spin" id="photo" width="100px" height="100px">
             <div class="form-container">
                 <form id="messageForm">
                     <label for="nickname">Ник:</label>
